@@ -23,6 +23,21 @@ class InventoryLevelService extends AbstractService
     }
 
     /**
+     * Connects an inventory item to a location
+     *
+     * @param InventoryAdjustment $inventoryAdjustment
+     * @return InventoryLevel
+     */
+    public function connect(InventoryAdjustment $inventoryAdjustment)
+    {
+        $data = $inventoryAdjustment->exportData();
+        $endpoint = '/admin/inventory_levels/connect.json';
+        $response = $this->request($endpoint, 'POST', $data);
+
+        return $this->createObject(InventoryLevel::class, $response['inventory_level']);
+    }
+
+    /**
      * Adjusts the inventory level of an inventory item at a single location
      * 
      * @param InventoryAdjustment $inventoryAdjustment
