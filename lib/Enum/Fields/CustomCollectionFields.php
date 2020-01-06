@@ -8,6 +8,7 @@ class CustomCollectionFields extends AbstractObjectEnum
     const HANDLE = 'handle';
     const IMAGE = 'image';
     const ID = 'id';
+    const COLLECTS = 'collects';
     const METAFIELD = 'metafield';
     const PUBLISHED = 'published';
     const PUBLISHED_AT = 'published_at';
@@ -24,6 +25,7 @@ class CustomCollectionFields extends AbstractObjectEnum
             'handle' => 'string',
             'image' => 'object',
             'id' => 'integer',
+            'collects' => 'Collect[]',
             'metafield' => 'Metafield[]',
             'published' => "boolean",
             'published_at' => 'DateTime',
