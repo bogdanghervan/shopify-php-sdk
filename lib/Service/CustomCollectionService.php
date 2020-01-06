@@ -100,7 +100,7 @@ class CustomCollectionService extends AbstractService
      */
     public function delete(CustomCollection &$customCollection)
     {
-        $endpoint = '/admin/custom_collections/'.$customCollection->getId().'.json';
+        $endpoint = '/admin/custom_collections/'.$customCollection->id.'.json';
         $request = $this->createRequest($endpoint, static::REQUEST_METHOD_DELETE);
         $response = $this->send($request);
         return;
