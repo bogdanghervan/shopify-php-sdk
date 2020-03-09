@@ -30,7 +30,7 @@ class CollectService extends AbstractService
     public function count(array $params = array())
     {
         $endpoint = '/admin/collects/count.json';
-        $data = $this->request($endpoint);
+        $data = $this->request($endpoint, 'GET', $params);
         return $data['count'];
     }
 
